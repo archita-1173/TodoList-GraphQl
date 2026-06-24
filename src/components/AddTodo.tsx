@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client/react";
 import { CREATE_TODO } from "../graphql/mutations";
 import { GET_TODOS } from "../graphql/queries";
 
-import type{
+import type {
     CreateTodoData,
     CreateTodoVariables
 } from "../types/Todo";
@@ -19,7 +19,15 @@ export default function AddTodo() {
     >(
         CREATE_TODO,
         {
-            refetchQueries: [GET_TODOS]
+            refetchQueries: [
+                {
+                    query: GET_TODOS,
+                    variables: {
+                        page: 1,
+                        limit: 5
+                    }
+                }
+            ]
         }
     );
 

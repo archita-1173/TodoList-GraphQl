@@ -1,37 +1,37 @@
 import { gql } from "@apollo/client";
 
 export const GET_TODOS = gql`
-
-    query GetTodos {
-
-        getTodos {
-
-            id
-            title
-            completed
-
-        }
-
+  query GetTodos(
+    $page: Int,
+    $limit: Int
+  ) {
+    getTodos(
+      page: $page,
+      limit: $limit
+    ) {
+      id
+      title
+      completed
     }
-
+  }
 `;
 
 export const GET_TODO = gql`
-
-    query GetTodo(
-        $id: ID!
-    ) {
-
-        getTodo(
-            id: $id
-        ) {
-
-            id
-            title
-            completed
-
-        }
-
+  query GetTodo($id: ID!) {
+    getTodo(id: $id) {
+      id
+      title
+      completed
     }
+  }
+`;
 
+export const SEARCH_TODOS = gql`
+  query SearchTodos($title: String!) {
+    searchTodos(title: $title) {
+      id
+      title
+      completed
+    }
+  }
 `;

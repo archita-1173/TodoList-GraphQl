@@ -42,3 +42,10 @@ export interface DeleteTodoVariables {
 export interface DeleteTodoData {
     deleteTodo: boolean;
 }
+export interface SearchTodosData {
+    searchTodos: Todo[];
+}
+export interface GetTodosVariables {
+    page: number;
+    limit: number;
+}

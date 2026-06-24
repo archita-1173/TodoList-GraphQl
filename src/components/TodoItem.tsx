@@ -7,7 +7,7 @@ import {
 
 import { GET_TODOS } from "../graphql/queries";
 
-import type{
+import type {
     TodoItemProps,
     UpdateTodoData,
     UpdateTodoVariables,
@@ -25,7 +25,15 @@ export default function TodoItem({
     >(
         UPDATE_TODO,
         {
-            refetchQueries: [GET_TODOS]
+            refetchQueries: [
+                {
+                    query: GET_TODOS,
+                    variables: {
+                        page: 1,
+                        limit: 5
+                    }
+                }
+            ]
         }
     );
 
@@ -35,7 +43,15 @@ export default function TodoItem({
     >(
         DELETE_TODO,
         {
-            refetchQueries: [GET_TODOS]
+            refetchQueries: [
+                {
+                    query: GET_TODOS,
+                    variables: {
+                        page: 1,
+                        limit: 5
+                    }
+                }
+            ]
         }
     );
 
@@ -86,17 +102,13 @@ export default function TodoItem({
             <button
                 onClick={handleToggle}
             >
-
                 Toggle
-
             </button>
 
             <button
                 onClick={handleDelete}
             >
-
                 Delete
-
             </button>
 
         </div>
