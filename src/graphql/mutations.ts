@@ -22,7 +22,7 @@ export const CREATE_TODO = gql`
 
 `;
 
-export const UPDATE_TODO = gql`
+export const UPDATE_TODO = gql`//part of mutations is done here
 
     mutation UpdateTodo(
         $id: ID!,
