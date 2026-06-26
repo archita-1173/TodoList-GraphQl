@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-
+//is to view the code --basically its a get method
 export const GET_TODOS = gql`
   query GetTodos(
     $page: Int,

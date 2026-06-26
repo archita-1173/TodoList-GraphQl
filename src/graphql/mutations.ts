@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const CREATE_TODO = gql`
-
+//is to make changes in the code --basically its a post method,put method,delete method
     mutation CreateTodo(
         $title: String!
     ) {
